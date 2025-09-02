@@ -37,7 +37,9 @@ Running the script
 
   ```bash
   cd RQ1/UI_test_scrip
-  ./UI_testing_fully_automatic.ps1             
+
+  ./UI_testing_fully_automatic.ps1
+         
   ./UI_testing_semi_automatic.ps1
   ```
 
@@ -60,9 +62,13 @@ Running an experiment
 
   ```bash
   cd RQ2/ml/model_train
+
   # Run one of the classifiers:
+
   python lr.py   # Logistic Regression
+
   python rf.py   # Random Forest
+
   python svm.py  # Support Vector Machine
   ```
   
@@ -75,10 +81,15 @@ Running an experiment
 Running an experiment
 ```bash
 cd RQ2/llm/llm_query
+
 # Run one of the query scripts:
+
 python claude_api_call.py
+
 python openAI_api_query.py
+
 python deepseekR1_api_call.py
+
 python codellama_local.py
 ```
 
@@ -100,7 +111,9 @@ Running the sample analysis
 
 ```bash
 cd RQ3
+
 python RQ3/Gemma-3/llm_analysis.py            # try gemma-3
+
 pythoy RQ3/gpt-4o-mini/llm_analysis.py        # try gpt-4o-mini
 ```
 
