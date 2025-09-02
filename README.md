@@ -24,11 +24,14 @@ pip install -r requirements.txt
 
 ### Usage
 
-#### RQ1 UI Testing Scripts
+#### RQ1 UI Compliance Testing
 
-Folder `RQ1/UI_test_script` contains PowerShell scripts to automate UI testing of APKs and capture screenshots of the **Health Connect permission rationale dialog**. The scripts are intended to be run inside the Android Studio terminal (or any shell where `adb` is available in the PATH). It installs each APK, exercises the UI, and captures screenshots of the Health Connect permission rationale dialog.
+*RQ1* contains PowerShell scripts to automate UI testing of APKs and capture screenshots of the **Health Connect permission rationale dialog** and an input example. The scripts are intended to be run inside the Android Studio terminal (or any shell where `adb` is available in the PATH).
 
-Folder `RQ1/input_sample` contains an input json file example for running the scripts.
+| sub‑folder        | contents                                                                                      |
+| ----------------- | --------------------------------------------------------------------------------------------- |
+| `RQ1/UI_test_script` | PowerShell scripts to automate UI testing to capture screenshots. It installs each APK, exercises the UI, and captures screenshots of the Health Connect permission rationale dialog.     |
+| `RQ1/input_sample`   | an input json file example for running the scripts.                    |
 
 Running the script
 
@@ -38,9 +41,9 @@ Running the script
   ./UI_testing_semi_automatic.ps1
   ```
 
-#### 2. RQ2 ML/LLM-based code-level Accessibility Detection
+#### 2. RQ2 ML/LLM-based Code-level Accessibility Detection
 
-`RQ2` contains two approaches for identifying whether an app correctly implements the required *privacy-rationale* Activity at the code level.
+*RQ2* contains two approaches for identifying whether an app correctly implements the required *privacy-rationale* Activity at the code level.
 
 | Sub-folder  | Purpose |
 |-------------|---------|
@@ -71,6 +74,7 @@ Running an experiment
 
 Running an experiment
 ```bash
+cd RQ2/llm/llm_query
 # Run one of the query scripts:
 python claude_api_call.py
 python openAI_api_query.py
@@ -79,3 +83,35 @@ python codellama_local.py
 ```
 
 The script streams model thoughts to the console and saves a JSON containing per‑app verdicts. Feel free to tweak the prompt or use a different API endpoint.
+
+
+#### 3. RQ3 Permission-Clarity & Privacy-Policy Disclosure Analysis
+
+*RQ3* provides scripts and examples for analyzing **permission clarity** and **privacy-policy disclosure** using large language models (LLMs). Specifcially, the Gemma-3 pipeline demonstrates how to process **both text and image inputs** for policy analysis.
+
+| Sub-folder        | Contents                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| `RQ3/Gemma-3`     | Examples and scripts demonstrating analysis on both text and image input |
+| `RQ3/gpt-4o-mini` | Processed examples and scripts for running lightweight GPT-4o-mini        |
+
+
+
+Running the sample analysis
+
+```bash
+cd RQ3
+python RQ3/Gemma-3/llm_analysis.py            # try gemma-3
+pythoy RQ3/gpt-4o-mini/llm_analysis.py        # try gpt-4o-mini
+```
+
+
+Grab the complete HC‑compatible dataset from our [project website](https://sites.google.com/view/privacyinmhealth/datasets) and run the experiment to produce the JSON replicates the disclosure‑analysis numbers reported in Section 4 of the paper.
+
+
+### Contributing
+
+If you’d like to contribute, please open an issue or pull request.
+
+### License
+
+This project is licensed under the Apache 2.0 License – see the `LICENSE` file for details.
