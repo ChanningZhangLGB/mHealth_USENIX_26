@@ -2,7 +2,7 @@
 
 Health Connect (HC) is Google’s new Android platform layer that lets mobile‑health (mHealth) apps exchange sensitive health data while giving users fine‑grained control. To make that sharing transparent, every HC‑integrating app must provide a dedicated *privacy‑rationale* Activity explaining why permissions are needed and how data will be handled.
 
-This repository contains the artifacts, code, and datasets for the **first large‑scale compliance audit** of those requirements. We analysed **673 real‑world mHealth APKs** using a pipeline that blends automated UI exploration, static code analysis, and privacy policy disclosure investigation. Our study shows that **54.8 % of apps either omit or incorrectly implement the mandated dialog**, **code-level detection framework can achieve up to 0.879 accuracy**, and that **81.9 % of privacy‑policy texts fail to justify the requested permissions**.
+This repository contains the artifacts, code, and datasets for the **first large‑scale compliance audit** of those requirements. We analysed **673 real‑world mHealth APKs** using a pipeline that blends automated UI exploration, static code analysis, and privacy policy disclosure investigation. Our study shows that **54.8 % of apps either omit or incorrectly implement the mandated dialog**, **code-level detection framework can achieve up to 0.879 accuracy**, and that **76.3 % of privacy‑policy texts fail to justify the requested permissions**.
 
 ## Table of Contents
 
